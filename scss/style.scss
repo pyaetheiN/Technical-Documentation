@@ -1,0 +1,163 @@
+@import "_config.scss";
+@import "_utils.scss";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+a{
+  text-decoration: none;
+  color: $white;
+}
+// ===== pages ===== \\
+#page1{
+  font-family: $barlow;
+  color: $white;
+  font-size: 16px;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), #000), url("../images/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#page2{
+  font-family: $barlow;
+  color: $white;
+  font-size: 16px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), #000), url("../images/page2..png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#page3{
+  font-family: $barlow;
+  color: $white;
+  font-size: 16px;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgba(0,0,0,0.65), rgb(0, 0, 112)), red;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main{
+  transition: 0.3s;
+  width: 100%; // *
+}
+.wrapper{
+  overflow: hidden;
+}
+
+// ===== navigation ===== \\
+.nav{
+  background-color: rgba(0,0,0,0.5);
+  min-height: 100vh;
+  width: 200px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 8rem;
+  position: fixed;
+  transition: 0.5s;
+
+  &__toggle{
+    display: none;
+  }
+  &__close{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    font-size: 2em;
+    display: none;
+  }
+  
+  @media screen and (max-width: 968px) {
+    left: -100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 3;
+
+    &__toggle,
+    &__close{
+      display: block;
+    }
+    &__toggle{
+      color: $white;
+      position: fixed;
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 5px; 
+      width: 35px;
+      height: 35px;
+      padding-bottom: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 2%;
+      left: 5%;
+      font-size: 1.8em;
+      transition: 0.5s;
+      z-index: 2;
+
+      &:hover{
+        transform: rotate(90deg);
+      }
+    }
+    &__header{
+      margin-top: 1rem;
+    }
+  }
+
+  &__header{
+    font-size: 1.5em;
+  }
+  &__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+  }
+  &__link{
+    font-size: 1.2em;
+
+    a{
+      transition: 0.3s;
+
+      &:hover{
+        color: red;
+      }
+    }
+  }
+}
+.show-menu{
+  left: 0;
+}
+
+// ===== marketing ===== //
+#marketing{
+  
+  .section__text{
+    margin-top: 1em;
+
+    &::first-letter{
+      font-size: 1.5em;
+    }
+  }
+  .listings{
+    .section__text{
+      margin: 0;
+    }
+  }
+  .step{
+    margin-bottom: 3em;
+  }
+}
+
+// ===== reference ===== \\
+.reference{
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+}
